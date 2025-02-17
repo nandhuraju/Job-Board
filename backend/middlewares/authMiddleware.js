@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const { User } = require("../models");
 require("dotenv").config();
 
 // Middleware to verify JWT token
@@ -23,6 +24,9 @@ const authenticateUser = (req, res, next) => {
 
 // Middleware to check if user is a company
 const isCompany = (req, res, next) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Unauthorized. Please log in." });
+  }
   if (req.user.role !== "company") {
     return res
       .status(403)
@@ -35,6 +39,9 @@ const isCompany = (req, res, next) => {
 
 // Middleware to check if user is an applicant
 const isApplicant = (req, res, next) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Unauthorized. Please log in." });
+  }
   if (req.user.role !== "applicant") {
     return res
       .status(403)

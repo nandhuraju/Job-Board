@@ -4,7 +4,7 @@ const cors = require("cors");
 const { sequelize } = require("./models");
 const userRoutes = require("./routes/userRoutes");
 const jobRoutes = require("./routes/jobRoutes");
-// const applicationRoutes = require("./routes/applicationRoutes");
+const applicationRoutes = require("./routes/applicationRoutes");
 
 const app = express();
 app.use(cors());
@@ -13,7 +13,7 @@ app.use(express.json());
 // Routes
 app.use("/api/user", userRoutes);
 app.use("/api/job", jobRoutes);
-// app.use("/api/application", applicationRoutes);
+app.use("/api/application", applicationRoutes);
 
 // Sync database and start server
 sequelize

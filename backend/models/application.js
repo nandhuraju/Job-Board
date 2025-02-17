@@ -10,6 +10,10 @@ const Application = (sequelize) => {
     jobId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Jobs", // Must match table name
+        key: "id",
+      },
     },
     applicantId: {
       type: DataTypes.INTEGER,
