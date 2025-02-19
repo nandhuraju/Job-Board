@@ -133,22 +133,16 @@ const HomeApplicant = () => {
 
         {/* Your Applications */}
         <h2 className="text-2xl font-bold mt-6 mb-4">Your Applications</h2>
-        {appliedJobs.length === 0 ? (
-          <p>You haven't applied for any jobs yet.</p>
-        ) : (
-          <ul className="space-y-3">
-            {appliedJobs.map((application) => (
-              <li
-                key={application.id || `${userId}-${application.jobId}`}
-                className="border p-3 rounded shadow-md"
-              >
-                {application.Job && application.Job.title
-                  ? application.Job.title
-                  : "Job Title Not Found"}
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul className="space-y-3">
+          {appliedJobs.map((application) => (
+            <li
+              key={application.id || `${userId}-${application.jobId}`}
+              className="border p-3 rounded shadow-md"
+            >
+              {application.Job?.title || "Job Title Not Found"}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
