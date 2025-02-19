@@ -18,6 +18,10 @@ const Application = (sequelize) => {
     applicantId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "Users", // Ensure this refers to the Users table
+        key: "id",
+      },
     },
   });
 };

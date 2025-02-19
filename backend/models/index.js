@@ -40,12 +40,17 @@ fs.readdirSync(__dirname)
   });
 
 // Define Associations
-const { Job, Application } = db;
+const { Job, Application, User } = db;
 
 // Each application belongs to a job
 Application.belongsTo(Job, { foreignKey: "jobId" });
 // A job can have multiple applications
 Job.hasMany(Application, { foreignKey: "jobId" });
+
+// Each application belongs to a user (applicant)
+Application.belongsTo(User, { foreignKey: "applicantId" });
+// A user can have multiple applications
+User.hasMany(Application, { foreignKey: "applicantId" });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

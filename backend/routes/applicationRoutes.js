@@ -73,20 +73,5 @@ router.get("/:id", authenticateUser, isApplicant, async (req, res) => {
   }
 });
 
-//  Withdraw application (Delete application)
-router.delete("/:id", authenticateUser, isApplicant, async (req, res) => {
-  try {
-    const application = await Application.findByPk(req.params.id);
-    if (!application || application.applicantId !== req.user.id) {
-      return res.status(403).json({ message: "Unauthorized action" });
-    }
-
-    await application.destroy();
-    res.json({ message: "Application deleted successfully" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error" });
-  }
-});
 
 module.exports = router;

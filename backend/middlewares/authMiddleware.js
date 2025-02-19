@@ -28,11 +28,9 @@ const isCompany = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized. Please log in." });
   }
   if (req.user.role !== "company") {
-    return res
-      .status(403)
-      .json({
-        message: "Access denied. Only companies can perform this action.",
-      });
+    return res.status(403).json({
+      message: "Access denied. Only companies can perform this action.",
+    });
   }
   next();
 };
@@ -43,11 +41,9 @@ const isApplicant = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized. Please log in." });
   }
   if (req.user.role !== "applicant") {
-    return res
-      .status(403)
-      .json({
-        message: "Access denied. Only applicants can perform this action.",
-      });
+    return res.status(403).json({
+      message: "Access denied. Only applicants can perform this action.",
+    });
   }
   next();
 };
