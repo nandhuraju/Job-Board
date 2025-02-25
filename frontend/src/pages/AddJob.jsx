@@ -35,7 +35,7 @@ const AddJob = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md">
+      <nav className="bg-purple-600 text-white p-4 flex justify-between items-center shadow-md">
         <button
           onClick={() => navigate("/home")}
           className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300"
@@ -75,7 +75,7 @@ const AddJob = () => {
           ></textarea>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-purple-500 text-white px-4 py-2 rounded"
           >
             Add Job
           </button>

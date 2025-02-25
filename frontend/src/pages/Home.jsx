@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { IoChatbubbleEllipses } from "react-icons/io5"; // Importing chat icon
 
 const Home = () => {
   const [jobs, setJobs] = useState([]);
@@ -42,7 +43,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md">
+      <nav className="bg-purple-600 text-white p-4 flex justify-between items-center shadow-md">
         <h1 className="text-xl font-bold">Job Board</h1>
         <div className="flex items-center space-x-4">
           <span className="font-semibold">Welcome, {userName}!</span>
@@ -81,7 +82,7 @@ const Home = () => {
                 <div className="mt-4 flex justify-between">
                   <button
                     onClick={() => navigate(`/view-applicants/${job.id}`)}
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+                    className="bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded"
                   >
                     View Applicants
                   </button>
@@ -97,6 +98,14 @@ const Home = () => {
           </div>
         )}
       </div>
+
+      {/* Floating Chat Icon */}
+      <button
+        onClick={() => navigate("/chat")}
+        className="fixed bottom-6 right-6 bg-purple-500 hover:bg-purple-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+      >
+        <IoChatbubbleEllipses size={40} />
+      </button>
     </div>
   );
 };

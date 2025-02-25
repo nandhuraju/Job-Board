@@ -28,7 +28,7 @@ const ViewApplicants = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <nav className="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md">
+      <nav className="bg-purple-600 text-white p-4 flex justify-between items-center shadow-md">
         <button
           onClick={() => navigate("/home")}
           className="bg-gray-200 text-black px-4 py-2 rounded hover:bg-gray-300"

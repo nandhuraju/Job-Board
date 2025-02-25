@@ -40,17 +40,21 @@ fs.readdirSync(__dirname)
   });
 
 // Define Associations
-const { Job, Application, User } = db;
+const { Job, Application, User, Chat } = db;
 
-// Each application belongs to a job
+// Job and Application Relationship
 Application.belongsTo(Job, { foreignKey: "jobId" });
-// A job can have multiple applications
 Job.hasMany(Application, { foreignKey: "jobId" });
 
-// Each application belongs to a user (applicant)
+// User and Application Relationship
 Application.belongsTo(User, { foreignKey: "applicantId" });
-// A user can have multiple applications
 User.hasMany(Application, { foreignKey: "applicantId" });
+
+// User and Chat Relationship (for messaging)
+Chat.belongsTo(User, { as: "Sender", foreignKey: "senderId" });
+Chat.belongsTo(User, { as: "Receiver", foreignKey: "receiverId" });
+User.hasMany(Chat, { foreignKey: "senderId" });
+User.hasMany(Chat, { foreignKey: "receiverId" });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

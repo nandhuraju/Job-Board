@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { IoChatbubbleEllipses } from "react-icons/io5"; // Importing chat icon
 
 const HomeApplicant = () => {
   const [jobs, setJobs] = useState([]);
@@ -78,7 +79,7 @@ const HomeApplicant = () => {
   return (
     <div className="p-4">
       {/* Navbar */}
-      <nav className="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md">
+      <nav className="bg-purple-600 text-white p-4 flex justify-between items-center shadow-md">
         <h1 className="text-xl font-bold">Job Board</h1>
         <div className="flex items-center">
           <span className="mr-4">Welcome, {userName}</span>
@@ -116,7 +117,7 @@ const HomeApplicant = () => {
                       (appliedJob) => appliedJob.jobId === job.id
                     )
                       ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-green-500 text-white"
+                      : "bg-purple-500 text-white"
                   }`}
                   disabled={appliedJobs.some(
                     (appliedJob) => appliedJob.jobId === job.id
@@ -144,6 +145,14 @@ const HomeApplicant = () => {
           ))}
         </ul>
       </div>
+
+      {/* Floating Chat Icon */}
+      <button
+        onClick={() => navigate("/chat")}
+        className="fixed bottom-6 right-6 bg-purple-500 hover:bg-purple-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+      >
+        <IoChatbubbleEllipses size={40} />
+      </button>
     </div>
   );
 };

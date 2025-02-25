@@ -83,7 +83,7 @@ const SignupPage = () => {
           </select>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition"
+            className="bg-purple-500 text-white px-4 py-2 rounded w-full hover:bg-purple-600 transition"
           >
             Sign Up
           </button>
@@ -92,7 +92,7 @@ const SignupPage = () => {
         {/* Login Link */}
         <p className="mt-4 text-center text-gray-600">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-500 hover:underline">
+          <Link to="/login" className="text-purple-500 hover:underline">
             Login here
           </Link>
         </p>

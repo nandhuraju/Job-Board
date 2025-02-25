@@ -10,7 +10,7 @@ import AddJob from "./pages/AddJob";
 import ViewApplicants from "./pages/ViewApplicants";
 import HomeApplicant from "./pages/HomeApplicant";
 import LoginPage from "./pages/LoginPage";
-import ChatPage from "./pages/ChatPage";
+import ChatApp from "./pages/ChatApp";
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/add-job" element={<AddJob />} />
         <Route path="/view-applicants/:jobId" element={<ViewApplicants />} />
         <Route path="/homeApplicant" element={<HomeApplicant />} />
-        <Route path="/chat" element={<ChatPage/>} />
+        <Route path="/chat" element={<ChatApp/>} />
       </Routes>
     </Router>
   );

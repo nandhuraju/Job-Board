@@ -59,7 +59,7 @@ const LoginPage = () => {
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
-              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
               required
             />
           </div>
@@ -71,20 +71,20 @@ const LoginPage = () => {
               placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
-              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="border p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
               required
             />
           </div>
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded w-full hover:bg-blue-600 transition"
+            className="bg-purple-500 text-white px-4 py-2 rounded w-full hover:bg-purple-600 transition"
           >
             Login
           </button>
         </form>
         <p className="mt-4 text-center text-gray-600">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-blue-500 hover:underline">
+          <Link to="/signup" className="text-purple-500 hover:underline">
             Sign Up
           </Link>
         </p>
